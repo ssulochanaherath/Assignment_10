@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator</title>
+
+    <style>
+        html{
+            box-sizing: border-box;
+        }
+
+        body{
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: lightgrey;
+        }
+
+        .calculator{
+            background: lightblue;
+            width: 800px;
+            border-radius: 12px;
+            box-shadow: 0 5px 30px -5px rgba(0,0,0,0.6);
+        }
+
+        .calculator-display{
+            background: white;
+            color: white;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .calculator-display h1{
+            margin: 0;
+            padding: 25px;
+            font-size: 45px;
+            font-family: 'Monospaced', sans-serif;
+            font-weight: 100;
+            color: black;
+            overflow-x: auto;
+        }
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .calculator-buttons{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-gap: 10px;
+            padding: 10px;
+        }
+
+        button{
+            min-height: 50px;
+            font-size: 20px;
+            font-weight: 100;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background: rgb(199,199,199);
+        }
+
+        button:hover{
+            filter: brightness(110%);
+        }
+
+        button:active{
+            transform: translateY(1px);
+        }
+
+        button:focus{
+            outline: none;
+        }
+
+        .operator{
+            background: black;
+            color: white;
+            font-size: 30px;
+        }
+
+        .clear{
+            background: darkblue;
+            color: white;
+        }
+
+        .clear:hover{
+            filter: brightness(90%);
+        }
+        .equal-sign{
+            grid-column: -2;
+            grid-row: 2 / span 4;
+            background: darkblue;
+        }
+
+        @media  screen and (max-width: 600px) {
+            .calculator{
+                width: 95%;
+            }
+        }
+    </style>
+
+</head>
+<body>
+<div class="calculator">
+    <div class="calculator-display">
+        <h1>0</h1>
+    </div>
+    <div class="calculator-buttons">
+
+        <button class="operator" value="+">+</button>
+        <button class="operator" value="-">-</button>
+        <button class="operator" value="*">×</button>
+        <button class="operator" value="/">÷</button>
+
+        <button value="7">7</button>
+        <button value="8">8</button>
+        <button value="9">9</button>
+        <button value="4">4</button>
+        <button value="5">5</button>
+        <button value="6">6</button>
+        <button value="1">1</button>
+        <button value="2">2</button>
+        <button value="3">3</button>
+
+        <button class="decimal" value=".">.</button>
+        <button value="0">0</button>
+        <button class="clear" id="clear-btn">C</button>
+        <button class="equal-sign operator" value="=">=</button>
+    </div>
+</div>
+<!--Js-->
+<script src="script.js"></script>
+</body>
+</html>
